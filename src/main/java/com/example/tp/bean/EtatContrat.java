@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+// Créer la classe Java pour le modèle Etat contrat, cette classe est une représentation de la table
 @Entity
 public class EtatContrat {
 
