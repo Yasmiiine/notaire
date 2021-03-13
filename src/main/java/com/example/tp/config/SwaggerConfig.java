@@ -23,8 +23,9 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any()).build().apiInfo(getApiInfo());
     }
 
+
     public ApiInfo getApiInfo() {
-        return new ApiInfoBuilder().title("gestion notaire").version("2.0").description("préparation des contrats ")
+        return new ApiInfoBuilder().title("gestion-notaire").version("2.0").description("préparation-des-contrats ")
                 .license("he").build();
     }
 }
