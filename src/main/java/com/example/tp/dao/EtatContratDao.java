@@ -11,5 +11,6 @@ public interface EtatContratDao extends JpaRepository<EtatContrat, Long> {
     public List<EtatContrat> findByNumeroOrdre(int numeroOrdre);
 // list permet de sauvegarder les objets de etat contrat
     public EtatContrat findByCode(String code);
+    public EtatContrat findByLibelle(String libelle);
 
 }

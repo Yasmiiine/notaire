@@ -4,11 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-// Créer la classe Java pour le modèle Etat contrat, cette classe est une représentation de la table
+// Créer la classe Java pour le modèle Etat contrat, cette classe est une représentation
+// de la table
 @Entity
+//@Entity déclare la classe comme un entity bean
 public class EtatContrat {
-
+//@Id déclare la propriété identifiante de cet entity bean
     @Id
+    /* @GeneratedValue Cette annotation indique que la clé primaire est
+ générée de façon automatique lors de l’insertion en base. Strategy = GenerationType.AUTO :
+ La génération de la clé primaire est laissée à l’implémentation.
+*/
         @GeneratedValue(strategy = GenerationType.AUTO)
         private long id;
         private String code;
