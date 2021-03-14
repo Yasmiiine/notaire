@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 /*@RequestMapping permet d'indiquer le mapping d'URL pour lequel le contrôleur
 ou la méthode doit répondre :
-
 value : définit l'URL à traiter ;
 method : définit le type de la requête, GET dans ce cas.
 @PathVariable permet de spécifier une valeur en dehors de l'URL (ex. : id) et
 de l'assigner aux paramètres de la méthode.*/
 @RestController
+/*@RestController indique que les données renvoyées par chaque méthode seront écrites
+directement dans le corps de la réponse au lieu de restituer un modèle
+ */
 @RequestMapping("gestion d'un cabinet d'un notaire/etatContrat")
 public class EtatContratRes {
     @GetMapping("/Numero/numordre")

@@ -16,7 +16,7 @@ public class EtatContrat {
  La génération de la clé primaire est laissée à l’implémentation.
 */
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private long id;
+        private Long id;
         private String code;
         private String libelle;
         private int numeroOrdre;
