@@ -68,7 +68,7 @@ public class TypeContratService {
         }
     }
 
-    public List<TypeContrat> search(TypeContratVO tcVO){
+  /*  public List<TypeContrat> search(TypeContratVO tcVO){
 
         String query= " select t from TypeContrat t where 1=1";
         if(tcVO.getCode()!=null)
@@ -80,7 +80,7 @@ public class TypeContratService {
 
         return EntityManager.createQuery(query).getResultList();
 
-    }
+    }*/
 
 
     @Autowired
