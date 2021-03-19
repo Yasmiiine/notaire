@@ -78,12 +78,13 @@ public class TypeContratService {
         if(tcVO.getChargeMinMax()!=null)
             query+=" AND t.chargeMin<="+tcVO.getChargeMinMax();
 
-        return EntityManager.createQuery(query).getResultList();
+        return entityManager.createQuery(query).getResultList();
 
     }
 
 
     @Autowired
     private TypeContratDao typeContratDao;
-
+    @Autowired
+    private EntityManager entityManager;
 }

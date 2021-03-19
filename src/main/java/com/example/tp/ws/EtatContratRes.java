@@ -2,6 +2,7 @@ package com.example.tp.ws;
 
 import com.example.tp.bean.EtatContrat;
 import com.example.tp.service.EtatContratService;
+import com.example.tp.vo.EtatContratVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +34,11 @@ public class EtatContratRes {
     @PostMapping("/")
     public int save(@RequestBody EtatContrat etatContrat) {
         return etatContratService.save(etatContrat);
+    }
+
+    @PostMapping("/recherche-multicritere")
+    public List search(@RequestBody EtatContratVo etatContratVo) {
+        return etatContratService.search(etatContratVo);
     }
 
     @Autowired
