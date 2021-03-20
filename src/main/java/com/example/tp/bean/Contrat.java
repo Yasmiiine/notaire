@@ -11,6 +11,16 @@ public class Contrat {
     private String codeEtatContrat;
     private double montant;
 
+    public TypeContrat getTypeContrat() {
+        return typeContrat;
+    }
+
+    public void setTypeContrat(TypeContrat typeContrat) {
+        this.typeContrat = typeContrat;
+    }
+
+    @ManyToOne
+    private TypeContrat typeContrat;
 
     public long getId() {
         return id;

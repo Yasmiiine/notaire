@@ -1,10 +1,8 @@
 package com.example.tp.bean;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class TypeContrat {
@@ -14,6 +12,8 @@ public class TypeContrat {
     private String description;
     private double honoraireMin;
     private double chargeMin;
+    @OneToMany
+    private List<Contrat> contrat;
 
     public Long getId() {
         return id;

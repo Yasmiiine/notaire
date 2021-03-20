@@ -5,8 +5,17 @@ public class ContratVO {
     private String reference;
     private String codeTypeContrat;
     private String codeEtatContrat;
-    private Double mtMin;
-    private Double mtMax;
+    private String montantMax;
+    private String montantMin;
+    private String montant;
+
+    public String getMontant() {
+        return montant;
+    }
+
+    public void setMontant(String montant) {
+        this.montant = montant;
+    }
 
     public long getId() {
         return id;
@@ -40,19 +49,19 @@ public class ContratVO {
         this.codeEtatContrat = codeEtatContrat;
     }
 
-    public Double getMtMin() {
-        return mtMin;
+    public String getMontantMax() {
+        return montantMax;
     }
 
-    public void setMtMin(Double mtMin) {
-        this.mtMin = mtMin;
+    public void setMontantMax(String montantMax) {
+        this.montantMax = montantMax;
     }
 
-    public Double getMtMax() {
-        return mtMax;
+    public String getMontantMin() {
+        return montantMin;
     }
 
-    public void setMtMax(Double mtMax) {
-        this.mtMax = mtMax;
+    public void setMontantMin(String montantMin) {
+        this.montantMin = montantMin;
     }
 }
