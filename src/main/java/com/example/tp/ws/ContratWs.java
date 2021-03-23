@@ -1,6 +1,7 @@
 package com.example.tp.ws;
 
 import com.example.tp.bean.Contrat;
+import com.example.tp.bean.TypeContrat;
 import com.example.tp.service.ContratService;
 import com.example.tp.vo.ContratVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,14 @@ public class ContratWs {
         return contratservice.search(contratVo);
     }
 
+    /*@GetMapping("/codeTypeContrat/codeTypeContrat")
+    public List<Contrat> findByCodeTypeContrat(@PathVariable String codeTypeContrat) {
+        return contratservice.findByCodeTypeContrat(codeTypeContrat);
+    }
 
+    public boolean test(String codeTypeContrat, TypeContrat typeContrat) {
+        return contratservice.test(codeTypeContrat, typeContrat);
+    }*/
 
     @Autowired
     private ContratService contratservice;

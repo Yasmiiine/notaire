@@ -15,5 +15,7 @@ public interface ContratDao extends JpaRepository<Contrat,Long> {
     List<Contrat> findByReferenceLikeAndMontantGreaterThan(String reference, double montant);
     @Query("SELECT c FROM Contrat c WHERE c.montant>= :mt")
     List<Contrat> findByMontantsup(@Param("mt") double montant);
+    /*List<Contrat>  findByCodeTypeContrat(String codeTypeContrat);*/
+   /* List<Contrat>findByCodeEtatContrat(String codeEtatContrat);*/
 
 }

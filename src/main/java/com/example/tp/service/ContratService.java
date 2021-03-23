@@ -68,6 +68,16 @@ public class ContratService {
     public List<Contrat> findByMontantsup(double montant) {
         return contratdao.findByMontantsup(montant);
     }
+    /*public boolean test(String codeTypeContrat,TypeContrat typeContrat){
+        if(typeContratService.findByCode(typeContrat.getCode())==(TypeContrat) findByCodeTypeContrat(codeTypeContrat))
+           return true;
+        else return false;
+    }*/
+
+
+   /* public List<Contrat> findByCodeTypeContrat(String codeTypeContrat) {
+        return contratdao.findByCodeTypeContrat(codeTypeContrat);
+    }*/
 
     @Autowired
     private ContratDao contratdao;
