@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Stack;
 
@@ -24,7 +25,7 @@ public class ContratWs {
         return contratservice.deleteByRef(reference);
     }
     @GetMapping("/ref/{reference}/mt/{montant}")
-    public List<Contrat> findByReflikeAndGreaterthanMontant( @PathVariable String reference,@PathVariable double montant) {
+    public List<Contrat> findByReflikeAndGreaterthanMontant( @PathVariable String reference,@PathVariable BigDecimal montant) {
 
         return contratservice.findByReflikeAndMontantGreaterthan(reference, montant);
     }
@@ -37,11 +38,11 @@ public class ContratWs {
         return contratservice.save(contrat);
     }
     @GetMapping("/montant-greater_than/{montant}")
-    public List<Contrat> findByMontantsup(@PathVariable double montant) {
+    public List<Contrat> findByMontantsup(@PathVariable BigDecimal montant) {
         return contratservice.findByMontantsup(montant);
     }
 
-    @PostMapping("/search")
+   @PostMapping("/search")
     public List<Contrat> search(@RequestBody ContratVO contratVo) {
         return contratservice.search(contratVo);
     }
@@ -54,6 +55,14 @@ public class ContratWs {
     public boolean test(String codeTypeContrat, TypeContrat typeContrat) {
         return contratservice.test(codeTypeContrat, typeContrat);
     }*/
+    @GetMapping("/ref/{reference}")
+    public List<Contrat> findByNotaireReference( @PathVariable String reference) {
+        return contratservice.findByNotaireReference(reference);
+    }
+    @PostMapping("/")
+    public int saveContratsNotaire( @RequestBody  Contrat contrat) {
+        return contratservice.saveContratsNotaire(contrat);
+    }
 
     @Autowired
     private ContratService contratservice;

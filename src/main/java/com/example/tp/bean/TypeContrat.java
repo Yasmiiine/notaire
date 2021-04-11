@@ -12,7 +12,7 @@ public class TypeContrat {
     private String description;
     private double honoraireMin;
     private double chargeMin;
-    @OneToMany
+    @OneToMany(mappedBy = "typeContrat")
     private List<Contrat> contrat;
 
     public Long getId() {

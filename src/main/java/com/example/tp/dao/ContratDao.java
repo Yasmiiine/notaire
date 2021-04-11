@@ -6,15 +6,18 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 //code etatcontrat:liste contrat
+import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
 public interface ContratDao extends JpaRepository<Contrat,Long> {
     Contrat findByReference(String reference);
     int deleteByReference(String reference);
-    List<Contrat> findByReferenceLikeAndMontantGreaterThan(String reference, double montant);
+    List<Contrat> findByReferenceLikeAndMontantGreaterThan(String reference, BigDecimal montant);
     @Query("SELECT c FROM Contrat c WHERE c.montant>= :mt")
-    List<Contrat> findByMontantsup(@Param("mt") double montant);
+    List<Contrat> findByMontantsup(@Param("mt") BigDecimal montant);
+    List<Contrat> findByNotaireReference(String reference);
+
     /*List<Contrat>  findByCodeTypeContrat(String codeTypeContrat);*/
    /* List<Contrat>findByCodeEtatContrat(String codeEtatContrat);*/
 

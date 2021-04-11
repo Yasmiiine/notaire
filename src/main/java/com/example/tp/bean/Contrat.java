@@ -1,6 +1,7 @@
 package com.example.tp.bean;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 public class Contrat {
@@ -9,7 +10,18 @@ public class Contrat {
     private String reference;
     private String codeTypeContrat;
     private String codeEtatContrat;
-    private double montant;
+    private BigDecimal montant;
+
+    public Notaire getNotaire() {
+        return notaire;
+    }
+
+    public void setNotaire(Notaire notaire) {
+        this.notaire = notaire;
+    }
+
+    @ManyToOne
+    private Notaire notaire;
 
     public TypeContrat getTypeContrat() {
         return typeContrat;
@@ -54,11 +66,11 @@ public class Contrat {
         this.codeEtatContrat = codeEtatContrat;
     }
 
-    public double getMontant() {
+    public BigDecimal getMontant() {
         return montant;
     }
 
-    public void setMontant(double montant) {
+    public void setMontant(BigDecimal montant) {
         this.montant = montant;
     }
 }
