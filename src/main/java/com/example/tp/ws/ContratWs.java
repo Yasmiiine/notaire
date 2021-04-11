@@ -20,10 +20,6 @@ public class ContratWs {
         return contratservice.findByRef(reference);
     }
 
-    @Transactional
-    public int deleteByRef(String reference) {
-        return contratservice.deleteByRef(reference);
-    }
     @GetMapping("/ref/{reference}/mt/{montant}")
     public List<Contrat> findByReflikeAndGreaterthanMontant( @PathVariable String reference,@PathVariable BigDecimal montant) {
 
@@ -33,10 +29,10 @@ public class ContratWs {
     public List<Contrat> findAll() {
         return  contratservice.findAll();
     }
-   @PostMapping("/")
+  /* @PostMapping("/")
     public int save(@RequestBody Contrat contrat) {
         return contratservice.save(contrat);
-    }
+    }*/
     @GetMapping("/montant-greater_than/{montant}")
     public List<Contrat> findByMontantsup(@PathVariable BigDecimal montant) {
         return contratservice.findByMontantsup(montant);
@@ -55,10 +51,10 @@ public class ContratWs {
     public boolean test(String codeTypeContrat, TypeContrat typeContrat) {
         return contratservice.test(codeTypeContrat, typeContrat);
     }*/
-    @GetMapping("/ref/{reference}")
+  /*  @GetMapping("/ref/{reference}")
     public List<Contrat> findByNotaireReference( @PathVariable String reference) {
         return contratservice.findByNotaireReference(reference);
-    }
+    }*/
     @PostMapping("/")
     public int saveContratsNotaire( @RequestBody  Contrat contrat) {
         return contratservice.saveContratsNotaire(contrat);

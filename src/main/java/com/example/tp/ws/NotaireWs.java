@@ -5,10 +5,11 @@ import com.example.tp.service.NotaireService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@RequestMapping("gestion-cabinet-notaire/notaire")
+@RequestMapping("gestion-cabinet-notaire/notaire1")
 public class NotaireWs {
     @GetMapping("/ref/{ref}")
     public Notaire findByReference(@PathVariable String ref) {
@@ -30,7 +31,10 @@ public class NotaireWs {
     public int save( @RequestBody Notaire notaire) {
         return notaireService.save(notaire);
     }
-
+    @DeleteMapping("/reference/{reference}")
+    int deleteByRef( @PathVariable String reference){
+        return notaireService.deleteByRef(reference);
+    }
     @Autowired
     private NotaireService notaireService;
 }

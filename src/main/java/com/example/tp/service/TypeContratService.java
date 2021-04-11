@@ -85,6 +85,6 @@ public class TypeContratService {
 
     @Autowired
     private TypeContratDao typeContratDao;
-    @Autowired
-    private EntityManager entityManager;
+   /* @Autowired
+    private EntityManager entityManager;*/
 }

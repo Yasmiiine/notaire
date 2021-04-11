@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class Contrat {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String reference;
+    private String ref;
     private String codeTypeContrat;
     private String codeEtatContrat;
     private BigDecimal montant;
@@ -23,17 +23,6 @@ public class Contrat {
     @ManyToOne
     private Notaire notaire;
 
-    public TypeContrat getTypeContrat() {
-        return typeContrat;
-    }
-
-    public void setTypeContrat(TypeContrat typeContrat) {
-        this.typeContrat = typeContrat;
-    }
-
-    @ManyToOne
-    private TypeContrat typeContrat;
-
     public long getId() {
         return id;
     }
@@ -43,11 +32,11 @@ public class Contrat {
     }
 
     public String getReference() {
-        return reference;
+        return ref;
     }
 
     public void setReference(String reference) {
-        this.reference = reference;
+        this.ref = reference;
     }
 
     public String getcodeTypeContrat() {

@@ -17,15 +17,12 @@ import java.util.List;
 @Service
 public class ContratService {
     public Contrat findByRef(String reference) {
-        return contratdao.findByReference(reference);
-    }
-    @Transactional
-    public int deleteByRef(String reference) {
-        return contratdao.deleteByReference(reference);
+        return contratdao.findByRef(reference);
     }
 
+
     public List<Contrat> findByReflikeAndMontantGreaterthan(String reference, BigDecimal montant) {
-        return contratdao.findByReferenceLikeAndMontantGreaterThan(reference, montant);
+        return contratdao.findByRefLikeAndMontantGreaterThan(reference, montant);
     }
 
     public List<Contrat> findAll() {
@@ -40,7 +37,7 @@ public class ContratService {
             return 1;
         }
     }*/
-    public int save(Contrat contrat){
+   /* public int save(Contrat contrat){
         if(findByRef(contrat.getReference())!=null){
             return -1;
         }
@@ -55,7 +52,7 @@ public class ContratService {
             contratdao.save(contrat);
             return 1;
         }
-    }
+    }*/
     public int saveContratsNotaire(Contrat contrat){
         if(findByRef(contrat.getReference())!=null){
             return -1;
@@ -73,7 +70,7 @@ public class ContratService {
    public List<Contrat> search(ContratVO contratVo) {
         String query = "SELECT c FROM Contrat c WHERE 1=1";
         if (contratVo.getReference() != null)
-            query += " AND c.reference Like '%" + contratVo.getReference() + "%'";
+            query += " AND c.ref Like '%" + contratVo.getReference() + "%'";
         if (contratVo.getMontantMin() != null)
             query += " AND c.montant>=" + contratVo.getMontantMin();
         if (contratVo.getMontantMax() != null)
@@ -94,16 +91,19 @@ public class ContratService {
         return contratdao.findByCodeTypeContrat(codeTypeContrat);
     }*/
 
-    public List<Contrat> findByNotaireReference(String reference) {
+  /*  public List<Contrat> findByNotaireReference(String reference) {
         return contratdao.findByNotaireReference(reference);
+    }*/
+
+    int deleteByNotaireRef(String reference) {
+        return contratdao.deleteByNotaireRef(reference);
     }
 
     @Autowired
     private ContratDao contratdao;
     @Autowired
     private EntityManager entityManager;
-    @Autowired
-    private TypeContratService typeContratService;
+
     @Autowired
     private NotaireService notaireService;
 
