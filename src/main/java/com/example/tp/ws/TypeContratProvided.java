@@ -1,8 +1,10 @@
 package com.example.tp.ws;
 import com.example.tp.bean.TypeContrat;
 import com.example.tp.service.TypeContratService;
+import com.example.tp.vo.EtatContratVo;
 import com.example.tp.vo.TypeContratVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Encoding;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -60,6 +62,10 @@ public class TypeContratProvided {
     @PutMapping("/setChargeMin/code/{code}/nvcharge/{nvcharge}")
     public int setChargeMin(@PathVariable String code, double nvcharge) {
         return typeContratService.setChargeMin(code, nvcharge);
+    }
+    @PutMapping("/recherche-multicritere")
+    public List search(@RequestBody TypeContratVO typeContratVo) {
+        return typeContratService.search(typeContratVo);
     }
 
 
