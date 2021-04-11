@@ -62,10 +62,6 @@ public class TypeContratProvided {
         return typeContratService.setChargeMin(code, nvcharge);
     }
 
-    @PostMapping("/")
-    public List<TypeContrat> search(@PathVariable TypeContratVO tcVO) {
-        return typeContratService.search(tcVO);
-    }
 
     @Autowired
     private TypeContratService typeContratService;
