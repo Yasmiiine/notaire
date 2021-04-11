@@ -11,5 +11,6 @@ public interface NotaireDao extends JpaRepository<Notaire, Long> {
      Notaire findByReference(String ref);
      List<Notaire> findByReferenceLikeAndNomLike(String ref, String nom);
      List<Notaire>findByPassWordLike(String passWord);
+      int deleteByReference(String reference);
 }
 

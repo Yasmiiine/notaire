@@ -52,7 +52,7 @@ public class TypeContratProvided {
         return typeContratService.getOne(id);
     }
 
-    @PostMapping("/")
+    /*@PostMapping("/")
     public int save(@RequestBody TypeContrat typeContrat) {
         return typeContratService.save(typeContrat);
     }
@@ -60,7 +60,7 @@ public class TypeContratProvided {
     @PutMapping("/setChargeMin/code/{code}/nvcharge/{nvcharge}")
     public int setChargeMin(@PathVariable String code, double nvcharge) {
         return typeContratService.setChargeMin(code, nvcharge);
-    }
+    }*/
 
 
     @Autowired

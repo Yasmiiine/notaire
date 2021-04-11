@@ -12,8 +12,8 @@ public class TypeContrat {
     private String description;
     private double honoraireMin;
     private double chargeMin;
-    @OneToMany(mappedBy = "typeContrat")
-    private List<Contrat> contrat;
+   /* @OneToMany(mappedBy = "typeContrat")
+    private List<Contrat> contrat;*/
 
     public Long getId() {
         return id;
